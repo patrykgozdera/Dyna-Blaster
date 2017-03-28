@@ -29,8 +29,8 @@ public class Floor extends Obiekt {
 	{
 		Dimension sizeOfGameField=plansza.getSize();
 		g.setColor(color);
-		g.fillRect((int)(normalizedX*sizeOfGameField.getWidth()),(int)(normalizedY*sizeOfGameField.getHeight()), Xwidth-1,Yheight-1);
-	
+		g.fillRect((int)(getNormalizedX()*sizeOfGameField.getWidth()),(int)(getNormalizedY()*sizeOfGameField.getHeight()), Xwidth-1,Yheight-1);
+		
 	}
 	
 	

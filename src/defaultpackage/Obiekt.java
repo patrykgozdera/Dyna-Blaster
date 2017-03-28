@@ -22,7 +22,7 @@ import javafx.scene.image.*;
  */
 public abstract class Obiekt {
 	protected int  width, height;
-	protected double normalizedX, normalizedY;
+	private double normalizedX, normalizedY;
 	static int licznik=0;
 	Plansza plansza;
 	
@@ -36,6 +36,12 @@ public abstract class Obiekt {
 		
 		
 	}
+	
+	public void setNormalizedX(double x) { normalizedX=x; }
+	public void setNormalizedY(double y) { normalizedY=y; }
+	public double getNormalizedX() { return normalizedX; }
+	public double getNormalizedY() { return normalizedY; }
+	
 	
 	
 

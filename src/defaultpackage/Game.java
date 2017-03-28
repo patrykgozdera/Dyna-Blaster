@@ -1,6 +1,6 @@
 package defaultpackage;
 
-import java.awt.Canvas;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -9,24 +9,39 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 
 
 
-public class Game extends Canvas{
+public class Game extends JFrame{
 
 	
 	private static final long serialVersionUID = 1L;
-
-	Game(){
-		
-	Dimension dimension = new Dimension(Config.windowWidth, Config.windowHeight);
-	setPreferredSize(dimension);
-	setMinimumSize(dimension);
-	setMaximumSize(dimension);
-	setBackground(Color.black);
+	private Plansza gameField;
+	private JLabel infoLabel;
+	private ArrayList<String> configData;
+	Game()
+	{
 	
-		}
+		Dimension dimension = new Dimension(Config.windowWidth, Config.windowHeight);
+		setPreferredSize(dimension);
+		//setMinimumSize(dimension);
+		//setMaximumSize(dimension);
+		setBackground(Color.black);
+		gameField=new Plansza(2,2);
+		this.setLayout(new BorderLayout());
+		infoLabel=new JLabel("Tutaj beda informacje o grze");
+		infoLabel.setPreferredSize(new Dimension(200,80));
+		this.add(infoLabel, BorderLayout.NORTH);
+		this.add(gameField);
+		configData=new ArrayList<String>();
+	
+	
+	}
 	
 	
 	public void render(){
@@ -50,13 +65,7 @@ public class Game extends Canvas{
 			   String line;
 			   
 			   while((line = bufferReader.readLine()) != null) {
-				   for (char c : line.toCharArray()){
-					   if (c == '1'){
-						
-					   } else if(c == '0'){
-						   
-					   }
-				   }
+				  configData.add(line);
 				   
 			   }
 			   fileReader.close();

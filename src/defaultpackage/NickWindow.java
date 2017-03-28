@@ -53,15 +53,15 @@ public class NickWindow extends JFrame implements ActionListener{
 			new MainWindow().setVisible(true);
 		}else if(source == ok){
 			Game game = new Game();
+			game.setVisible(true);
 			game.read();
-			JFrame frame = new JFrame();
-			frame.setTitle(Config.gameName + " - ROZGRYWKA");
-			frame.add(game);
-			frame.setResizable(false);
-			frame.pack();
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setLocationRelativeTo(null);
-			frame.setVisible(true);
+			//JFrame frame = new JFrame();
+			game.setTitle(Config.gameName + " - ROZGRYWKA");
+			//frame.add(game);
+			game.pack();
+			game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			game.setLocationRelativeTo(null);
+			game.setVisible(true);
 			dispose();
 		}
 		
