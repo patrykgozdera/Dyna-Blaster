@@ -18,7 +18,7 @@ public class Plansza extends JPanel {
 	private int rows;
 	private int columns;
 	private Point[][] koordynaty;
-	Player player;
+	//Player player;
     ArrayList<Floor> FloorList;
     
     public Plansza(int xrows, int xcol)
