@@ -8,12 +8,14 @@ import java.awt.Rectangle;
 public class Floor extends Obiekt {
 
 	private Color color;
-	public static int Xwidth=1;
-	public static int Yheight=1;
-	public Floor(Plansza plansza, double x, double y, Color color) 
+	public Floor(Plansza plansza, int x, int y, Color color, int xwidth, int xheight) 
 	{
 		super(plansza,x,y);
 		this.color=color;
+		System.out.println("utworzono podloge");
+		width=xwidth;
+		height=xheight;
+		
 
 	
 		
@@ -21,15 +23,16 @@ public class Floor extends Obiekt {
 	
 	public  static void setDimension(int xwidth, int xheight)
 	{ 
-		Xwidth=xwidth;
-		Yheight=xheight;
+		width=xwidth;
+		height=xheight;
 	}
-	
-	public void Paint(Graphics g)
+
+	public void draw(Graphics g)
 	{
 		Dimension sizeOfGameField=plansza.getSize();
 		g.setColor(color);
-		g.fillRect((int)(getNormalizedX()*sizeOfGameField.getWidth()),(int)(getNormalizedY()*sizeOfGameField.getHeight()), Xwidth-1,Yheight-1);
+		System.out.println("draw floor" +x+"y"+y+ "width"+width+"height"+height);
+		g.fillRect(getX(),getY(), width,height);
 		
 	}
 	

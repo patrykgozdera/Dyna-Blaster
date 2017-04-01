@@ -6,8 +6,8 @@ import java.awt.Graphics;
 
 public class Player extends Obiekt{
 
-	private double dx, dy;
-	public Player(Plansza plansza, double x,double y, int width, int height)
+	private int dx, dy;
+	public Player(Plansza plansza, int x,int y, int width, int height)
 	{
 		super(plansza,x,y);
 		this.width=width;
@@ -22,27 +22,27 @@ public class Player extends Obiekt{
 		this.move();
 		Dimension sizeOfGameField=plansza.getSize();
 		g.setColor(Color.ORANGE);
-		g.fillOval((int)(getNormalizedX()*sizeOfGameField.getWidth()),(int)(getNormalizedY()*sizeOfGameField.getHeight()), width, height);
+		g.fillOval(getX(),getY(), width, height);
 	}
 	
 	private void move()
 	{
-		this.setNormalizedX(this.getNormalizedX()+dx);
-		this.setNormalizedY(this.getNormalizedY()+dy);
+		this.setX(this.getX()+dx);
+		this.setY(this.getY()+dy);
 	}
 	
-	public void setPosition(double x, double y)
+	public void setPosition(int x, int y)
 	{
-		this.setNormalizedX(x);
-		this.setNormalizedX(y);
+		this.setX(x);
+		this.setX(y);
 	}
 	
-	public void setDX(double value)
+	public void setDX(int value)
 	{
 		dx=value;
 	}
 	
-	public void setDY(double value)
+	public void setDY(int value)
 	{
 		dy=value;
 	}

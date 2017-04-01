@@ -39,6 +39,9 @@ public class Game extends JFrame{
 		this.add(infoLabel, BorderLayout.NORTH);
 		this.add(gameField);
 		configData=new ArrayList<String>();
+		read();
+		pack();
+		gameField.createMap(configData);
 	
 	
 	}
@@ -66,7 +69,7 @@ public class Game extends JFrame{
 			   
 			   while((line = bufferReader.readLine()) != null) {
 				  configData.add(line);
-				   
+				  System.out.println(line);
 			   }
 			   fileReader.close();
 			  }

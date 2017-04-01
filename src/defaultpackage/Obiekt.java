@@ -22,25 +22,26 @@ import javafx.scene.image.*;
  */
 public abstract class Obiekt {
 	protected int  width, height;
-	private double normalizedX, normalizedY;
+	protected int x;
+	protected int y;
 	static int licznik=0;
 	Plansza plansza;
 	
-	public Obiekt(Plansza plansza,double x, double y)
+	public Obiekt(Plansza plansza,int x, int y)
 	{
-		this.normalizedX=x;
-		this.normalizedY=y;
+		this.x=x;
+		this.y=y;
 		this.plansza=plansza;
 		width=0;
-		height=0;
-		
-		
+		height=0;		
 	}
 	
-	public void setNormalizedX(double x) { normalizedX=x; }
-	public void setNormalizedY(double y) { normalizedY=y; }
-	public double getNormalizedX() { return normalizedX; }
-	public double getNormalizedY() { return normalizedY; }
+	abstract void draw(Graphics g);
+	
+	public void setX(int x) { this.x=x; }
+	public void setY(int y) { this.y=y; }
+	public int getX() { return x; }
+	public int getY() { return y; }
 	
 	
 	
